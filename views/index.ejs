@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>db javascript</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>
+            <%= title %>
+        </h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">nama</th>
+                    <th scope="col">kelas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for (let user of users) { %>
+                    <tr>
+                        <th scope="row">
+                            <%= user.id %>
+                        </th>
+                        <th scope="row">
+                            <%= user.nama %>
+                        </th>
+                        <th scope="row">
+                            <%= user.kelas %>
+                        </th>
+                    </tr>
+                    <% } %>
+            </tbody>
+        </table>
+        <form action="/tambah" method="post">
+            <h3>TAMBAH SISWA BARU</h3>
+            <div class="row mb-3">
+                <label for="nama" class="col-sm-2 col-form-label">Nama Panggil</label>
+                <div class="col-sm-10">
+                    <input type="text" name="nama" class="form-control">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="kelas" class="col-sm-2 col-form-label">Kelas</label>
+                <div class="col-sm-10">
+                    <input type="text" name="kelas" class="form-control">
+                </div>
+            </div>
+            <input type="submit" class="btn btn-primary" value="TAMBAHKAN">
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>
